@@ -46,7 +46,7 @@ export function Footer() {
 				{/* Three-Column Links */}
 				<div className="mb-14 grid grid-cols-1 gap-10 text-center md:grid-cols-3 md:text-left">
 					{/* Column 1 — Programs */}
-					<div className="flex flex-col gap-3">
+					<div className="flex flex-col items-center gap-3 md:items-start">
 						<h3 className="mb-1 font-heading text-xs font-bold uppercase tracking-[0.166em] text-foreground/60">
 							Programs
 						</h3>
@@ -71,7 +71,7 @@ export function Footer() {
 					</div>
 
 					{/* Column 2 — School */}
-					<div className="flex flex-col gap-3">
+					<div className="flex flex-col items-center gap-3 md:items-start">
 						<h3 className="mb-1 font-heading text-xs font-bold uppercase tracking-[0.166em] text-foreground/60">
 							School
 						</h3>
@@ -96,7 +96,7 @@ export function Footer() {
 					</div>
 
 					{/* Column 3 — Contact */}
-					<div className="flex flex-col gap-3">
+					<div className="flex flex-col items-center gap-3 md:items-start">
 						<h3 className="mb-1 font-heading text-xs font-bold uppercase tracking-[0.166em] text-foreground/60">
 							Contact
 						</h3>

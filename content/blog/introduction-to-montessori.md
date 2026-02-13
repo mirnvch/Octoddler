@@ -4,7 +4,7 @@ excerpt: Discover the core principles of Montessori education and how this child
 date: 2025-01-15
 author: Maria Rodriguez
 category: Montessori Philosophy
-image: "/images/hero/hero-teacher.avif"
+image: "/images/illustrations/illustration-02.avif"
 ---
 
 ## What is Montessori Education?

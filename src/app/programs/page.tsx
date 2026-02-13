@@ -27,7 +27,7 @@ const programDetails = [
 		alt: 'Preschool children engaged in Montessori learning at Octoddler School',
 	},
 	{
-		image: '/images/programs/program-3.avif',
+		image: '/images/classroom/primary-2.png',
 		alt: 'Pre-K students working together in Montessori classroom at Octoddler School',
 	},
 ] as const

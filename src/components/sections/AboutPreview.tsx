@@ -1,7 +1,7 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import { Container } from '@/components/ui/Container'
 import { FadeIn } from '@/components/ui/FadeIn'
+import { LottieAnimation } from '@/components/illustrations/LottieAnimation'
 
 export function AboutPreview() {
 	return (
@@ -50,16 +50,13 @@ export function AboutPreview() {
 						</div>
 					</FadeIn>
 
-					{/* Overlapping image */}
+					{/* Lottie animation — education boy reading */}
 					<FadeIn direction="right" delay={0.2}>
 						<div className="-mt-15 md:mt-0 md:-ml-[100px]">
-							<div className="relative aspect-[3/4] w-full md:w-[380px] lg:w-[440px]">
-								<Image
-									src="/images/hero/hero-teacher.avif"
-									alt="Montessori teacher guiding a child through a hands-on learning activity at Octoddler School"
-									fill
-									className="object-cover"
-									sizes="(max-width: 768px) 100vw, 440px"
+							<div className="aspect-[3/4] w-full overflow-hidden rounded-sm bg-secondary/20 md:w-[380px] lg:w-[440px]">
+								<LottieAnimation
+									src="/animations/character-reading.json"
+									className="p-8"
 								/>
 							</div>
 						</div>

@@ -10,6 +10,7 @@ import { Newsletter } from '@/components/sections/Newsletter'
 import { FadeIn, Stagger, StaggerItem } from '@/components/ui/FadeIn'
 import { createMetadata } from '@/lib/metadata'
 import { generateBreadcrumbSchema } from '@/lib/schema'
+import { LottieAnimation } from '@/components/illustrations/LottieAnimation'
 
 export const metadata: Metadata = createMetadata({
 	title: 'Our Story',
@@ -131,7 +132,7 @@ export default function AboutPage() {
 				</Container>
 			</section>
 
-			{/* Where It All Began */}
+			{/* Where It All Began — animated illustration */}
 			<section className="py-[60px] md:py-[80px]">
 				<Container>
 					<FadeIn>
@@ -171,14 +172,11 @@ export default function AboutPage() {
 								</div>
 							</div>
 
-							<div className="border-[5px] border-border">
-								<div className="relative aspect-[4/3] overflow-hidden">
-									<Image
-										src="/images/hero/hero-teacher.avif"
-										alt="Octoddler School classroom with children engaged in Montessori learning activities"
-										fill
-										className="object-cover"
-										sizes="(max-width: 768px) 100vw, 50vw"
+							<div className="overflow-hidden rounded-sm border-[5px] border-border bg-primary/5">
+								<div className="aspect-[4/3]">
+									<LottieAnimation
+										src="/animations/growing-plant.json"
+										className="p-6"
 									/>
 								</div>
 							</div>

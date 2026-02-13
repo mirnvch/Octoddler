@@ -4,7 +4,7 @@ excerpt: Join our Montessori community this spring! Limited spaces available acr
 date: 2025-02-10
 author: Octoddler Team
 category: School News
-image: "/images/classroom/primary-2.png"
+image: "/images/illustrations/illustration-06.avif"
 ---
 
 ## Welcome to Spring 2025 Enrollment
