@@ -4,6 +4,7 @@ excerpt: Learn about essential practical life activities that help children deve
 date: 2025-01-20
 author: Sarah Johnson
 category: Activities & Learning
+image: "/images/illustrations/illustration-01.avif"
 ---
 
 ## Why Practical Life Activities Matter

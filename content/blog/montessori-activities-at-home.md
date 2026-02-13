@@ -4,7 +4,7 @@ excerpt: "Practical, easy-to-implement Montessori activities that support your c
 date: "2026-01-28"
 author: "Jessica Park"
 category: "Activities & Learning"
-image: "/images/blog/placeholder.jpg"
+image: "/images/classroom/why-choose-2.png"
 ---
 
 You don't need expensive materials or a teaching degree to bring Montessori principles into your home. These ten simple activities use items you already have and support your child's natural development through practical, hands-on learning.

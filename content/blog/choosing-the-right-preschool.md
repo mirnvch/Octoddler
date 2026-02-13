@@ -4,7 +4,7 @@ excerpt: "A comprehensive guide to evaluating preschools, asking the right quest
 date: "2026-02-05"
 author: "Maria Chen"
 category: "Parenting Tips"
-image: "/images/blog/placeholder.jpg"
+image: "/images/classroom/why-choose-1.png"
 ---
 
 Choosing your child's first school is one of the most important decisions you'll make as a parent. The right preschool environment can foster a lifelong love of learning, while the wrong fit can create stress for both child and family. This guide will help you navigate the selection process with confidence.

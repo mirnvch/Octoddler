@@ -78,10 +78,10 @@ export default function AboutPage() {
 			{/* Hero Section — Overlapping image + peach box pattern */}
 			<section className="py-[60px] md:py-[80px]">
 				<Container>
-					<div className="grid items-center md:grid-cols-[1fr_auto]">
+					<div className="grid items-center md:grid-cols-[1fr_380px] lg:grid-cols-[1fr_440px]">
 						{/* Peach box with school history text */}
 						<FadeIn direction="left">
-							<div className="bg-secondary px-8 py-8 md:px-[52px] md:py-[50px]">
+							<div className="relative z-10 bg-secondary px-8 py-8 md:px-[52px] md:py-[50px]">
 								<p className="font-heading text-sm uppercase tracking-wider text-foreground/60">
 									Montessori education, est. 2013
 								</p>

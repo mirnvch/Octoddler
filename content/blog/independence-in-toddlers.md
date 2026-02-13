@@ -4,7 +4,7 @@ excerpt: "Learn how Montessori principles help toddlers develop confidence, capa
 date: "2026-02-10"
 author: "Emily Nakamura"
 category: "Child Development"
-image: "/images/blog/placeholder.jpg"
+image: "/images/programs/program-1.avif"
 ---
 
 "Me do it!" If you're the parent of a toddler, you've heard this declaration countless times—often at the most inconvenient moments. While the toddler's quest for independence can be frustrating, it's actually a crucial developmental stage. The Montessori approach transforms this challenging phase into an opportunity for building genuine capability and confidence.

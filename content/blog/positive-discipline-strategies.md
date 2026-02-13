@@ -4,6 +4,7 @@ excerpt: Explore effective positive discipline techniques that foster cooperatio
 date: 2025-02-01
 author: Michael Chen
 category: Parenting Tips
+image: "/images/classroom/why-choose-5.jpg"
 ---
 
 ## Understanding Positive Discipline

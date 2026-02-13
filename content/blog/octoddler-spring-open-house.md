@@ -4,7 +4,7 @@ excerpt: "Explore our Montessori classrooms, meet our teachers, and discover if 
 date: "2026-02-12"
 author: "Sarah Johnson"
 category: "School News"
-image: "/images/blog/placeholder.jpg"
+image: "/images/hero/hero-grid.avif"
 ---
 
 ## You're Invited to Discover Octoddler!

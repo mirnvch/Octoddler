@@ -62,7 +62,7 @@ export default function TeamPage() {
 									{/* Portrait photo */}
 									<div className="relative aspect-[3/4] overflow-hidden">
 										<Image
-											src={`/images/team/${member.slug}.jpeg`}
+											src={member.image}
 											alt={`${member.name} — ${member.role} at Octoddler School`}
 											fill
 											className="object-cover"

@@ -7,10 +7,10 @@ export function AboutPreview() {
 	return (
 		<section className="py-section">
 			<Container>
-				<div className="grid items-center md:grid-cols-[1fr_auto]">
+				<div className="grid items-center md:grid-cols-[1fr_380px] lg:grid-cols-[1fr_440px]">
 					{/* Peach box with text content */}
 					<FadeIn direction="left">
-						<div className="bg-secondary px-8 py-8 md:px-[52px] md:py-[50px]">
+						<div className="relative z-10 bg-secondary px-8 py-8 md:px-[52px] md:py-[50px]">
 							<h2 className="font-heading text-3xl font-bold uppercase tracking-wide md:text-4xl">
 								Octoddler School
 							</h2>

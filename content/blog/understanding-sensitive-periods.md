@@ -4,6 +4,7 @@ excerpt: Learn about the critical windows of learning in early childhood and how
 date: 2025-02-05
 author: Dr. Emily Watson
 category: Child Development
+image: "/images/programs/program-2.avif"
 ---
 
 ## What Are Sensitive Periods?
