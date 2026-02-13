@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from 'next'
 import { DM_Sans, Josefin_Sans, Playfair_Display } from 'next/font/google'
 import { SITE } from '@/lib/constants'
 import { generateOrganizationSchema } from '@/lib/schema'
+import { Header } from '@/components/layout/Header'
+import { Footer } from '@/components/layout/Footer'
 import './globals.css'
 
 const josefinSans = Josefin_Sans({
@@ -89,7 +91,9 @@ export default function RootLayout({
 				<a href="#main-content" className="skip-nav">
 					Skip to main content
 				</a>
+				<Header />
 				{children}
+				<Footer />
 			</body>
 		</html>
 	)
