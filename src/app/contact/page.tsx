@@ -65,7 +65,7 @@ export default function ContactPage() {
 								</h2>
 							</FadeIn>
 
-							<Stagger className="space-y-6">
+							<Stagger className="space-y-6" amount={0.05}>
 								<StaggerItem>
 									<div className="rounded-sm border-[5px] border-border bg-card p-8 transition-shadow duration-300 hover:shadow-lg">
 										<div className="flex items-start gap-5">
@@ -77,7 +77,7 @@ export default function ContactPage() {
 													Phone
 												</h3>
 												<a
-													href={`tel:${SITE.phone}`}
+													href={SITE.phoneHref}
 													className="link-underline text-muted transition-colors hover:text-foreground"
 												>
 													{SITE.phone}

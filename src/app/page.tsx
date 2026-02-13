@@ -13,7 +13,7 @@ import { EnrollmentCTA } from '@/components/sections/EnrollmentCTA'
 import { createMetadata } from '@/lib/metadata'
 
 export const metadata: Metadata = createMetadata({
-	title: 'Home',
+	title: 'Montessori Education in Irvine & Ladera Ranch',
 	description:
 		'Nurturing independence, confidence, and natural curiosity in children 12 months to 6 years through authentic Montessori education in Irvine and Ladera Ranch, CA.',
 	path: '/',

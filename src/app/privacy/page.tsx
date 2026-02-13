@@ -4,7 +4,6 @@ import { Container } from '@/components/ui/Container'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { createMetadata } from '@/lib/metadata'
 import { generateBreadcrumbSchema } from '@/lib/schema'
-import { FadeIn } from '@/components/ui/FadeIn'
 
 export const metadata: Metadata = createMetadata({
 	title: 'Privacy Policy',
@@ -49,22 +48,19 @@ export default function PrivacyPage() {
 			{/* Header */}
 			<section className="pt-16 pb-8 md:pt-24 md:pb-12 lg:pt-32 lg:pb-16">
 				<Container>
-					<FadeIn>
-						<div className="max-w-3xl mx-auto text-center">
+											<div className="max-w-3xl mx-auto text-center">
 							<SectionHeading
 								title="Privacy Policy"
 								subtitle="Last updated: February 2026"
 								as="h1"
 							/>
 						</div>
-					</FadeIn>
 				</Container>
 			</section>
 
 			{/* Content */}
 			<section className="pb-20 md:pb-28 lg:pb-36">
 				<Container>
-					<FadeIn delay={0.1}>
 						<div className="max-w-3xl mx-auto space-y-16">
 							{/* Introduction */}
 							<div>
@@ -307,7 +303,7 @@ export default function PrivacyPage() {
 											<p>
 												Phone:{' '}
 												<a
-													href="tel:(949) 484-9990"
+													href="tel:+19494849990"
 													className="link-underline text-foreground"
 												>
 													(949) 484-9990
@@ -332,7 +328,7 @@ export default function PrivacyPage() {
 								</p>
 							</div>
 						</div>
-					</FadeIn>
+
 				</Container>
 			</section>
 		</main>

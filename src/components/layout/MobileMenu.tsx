@@ -132,7 +132,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
 						{/* Contact Info */}
 						<div className="border-t border-foreground/10 p-10">
 							<a
-								href={`tel:${SITE.phone}`}
+								href={SITE.phoneHref}
 								className="block font-heading text-lg font-medium text-foreground"
 							>
 								{SITE.phone}

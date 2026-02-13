@@ -93,6 +93,14 @@ export default function RootLayout({
 						__html: JSON.stringify(generateOrganizationSchema()),
 					}}
 				/>
+				<noscript>
+					<style
+						dangerouslySetInnerHTML={{
+							__html:
+								'[style*="opacity: 0"], [style*="opacity:0"] { opacity: 1 !important; transform: none !important; }',
+						}}
+					/>
+				</noscript>
 			</head>
 			<body>
 				<a href="#main-content" className="skip-nav">

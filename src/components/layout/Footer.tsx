@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Facebook, Instagram } from 'lucide-react'
 import { Container } from '@/components/ui/Container'
 import { SITE } from '@/lib/constants'
@@ -7,6 +8,19 @@ export function Footer() {
 	return (
 		<footer role="contentinfo" className="bg-primary py-16 md:py-20">
 			<Container>
+				{/* Logo */}
+				<div className="mb-10 flex justify-center">
+					<Link href="/" aria-label={`${SITE.name} — Home`}>
+						<Image
+							src="/images/logos/oc-logo.png"
+							alt={SITE.name}
+							width={160}
+							height={42}
+							className="h-10 w-auto brightness-0 invert opacity-80"
+						/>
+					</Link>
+				</div>
+
 				{/* Social Icons Row */}
 				<div className="mb-14 flex items-center justify-center gap-5">
 					<a
@@ -86,7 +100,7 @@ export function Footer() {
 						<h3 className="mb-1 font-heading text-xs font-bold uppercase tracking-[0.166em] text-foreground/60">
 							Contact
 						</h3>
-						<a href={`tel:${SITE.phone}`} className="link-underline inline-block text-foreground">
+						<a href={SITE.phoneHref} className="link-underline inline-block text-foreground">
 							{SITE.phone}
 						</a>
 						<a

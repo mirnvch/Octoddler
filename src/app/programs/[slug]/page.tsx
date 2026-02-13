@@ -113,28 +113,26 @@ export default async function ProgramPage(props: Props) {
 							align="left"
 						/>
 					</FadeIn>
-					<Stagger>
-						<div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-							{program.curriculum.map((item) => {
-								const Icon =
-									CURRICULUM_ICONS[
-										item.area as keyof typeof CURRICULUM_ICONS
-									] || BookOpen
-								return (
-									<StaggerItem key={item.area}>
-										<Card bordered={false} className="bg-card">
-											<div className="mb-4 flex h-12 w-12 items-center justify-center rounded-sm bg-primary/10">
-												<Icon className="h-6 w-6 text-primary" />
-											</div>
-											<h3 className="mb-3 font-heading text-xl font-medium">
-												{item.area}
-											</h3>
-											<p className="text-sm text-muted">{item.description}</p>
-										</Card>
-									</StaggerItem>
-								)
-							})}
-						</div>
+					<Stagger className="grid gap-6 md:grid-cols-2 lg:grid-cols-3" amount={0.05}>
+						{program.curriculum.map((item) => {
+							const Icon =
+								CURRICULUM_ICONS[
+									item.area as keyof typeof CURRICULUM_ICONS
+								] || BookOpen
+							return (
+								<StaggerItem key={item.area}>
+									<Card bordered={false} className="bg-card">
+										<div className="mb-4 flex h-12 w-12 items-center justify-center rounded-sm bg-primary/10">
+											<Icon className="h-6 w-6 text-primary" />
+										</div>
+										<h3 className="mb-3 font-heading text-xl font-medium">
+											{item.area}
+										</h3>
+										<p className="text-sm text-muted">{item.description}</p>
+									</Card>
+								</StaggerItem>
+							)
+						})}
 					</Stagger>
 				</section>
 

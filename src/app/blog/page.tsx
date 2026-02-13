@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight, Calendar, Clock } from 'lucide-react'
 import { getAllPosts, getPostsByCategory, formatDate, BLOG_CATEGORIES } from '@/lib/blog'
 import type { BlogCategory } from '@/lib/blog'
@@ -95,68 +96,77 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
 
 					{/* Posts grid */}
 					{posts.length > 0 ? (
-						<Stagger>
-							<div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
-								{posts.map((post) => (
-									<StaggerItem key={post.slug}>
-										<article className="hover-lift group flex h-full flex-col overflow-hidden rounded-sm border-[5px] border-border bg-card transition-shadow duration-300">
-											{/* Image placeholder */}
-											<div className="aspect-video w-full bg-border" />
+						<Stagger className="grid gap-10 md:grid-cols-2 lg:grid-cols-3" amount={0.05}>
+							{posts.map((post) => (
+								<StaggerItem key={post.slug}>
+									<article className="hover-lift group flex h-full flex-col overflow-hidden rounded-sm border-[5px] border-border bg-card transition-shadow duration-300">
+										{post.image ? (
+										<div className="relative aspect-video w-full overflow-hidden">
+											<Image
+												src={post.image}
+												alt={post.title}
+												fill
+												className="object-cover"
+												sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+											/>
+										</div>
+									) : (
+										<div className="aspect-video w-full bg-border" />
+									)}
 
-											<div className="flex flex-1 flex-col p-8">
-												{/* Category badge */}
-												<Badge variant="primary" className="mb-4 w-fit">
-													{post.category}
-												</Badge>
+										<div className="flex flex-1 flex-col p-8">
+											{/* Category badge */}
+											<Badge variant="primary" className="mb-4 w-fit">
+												{post.category}
+											</Badge>
 
-												{/* Title */}
-												<h2 className="mb-3 font-heading text-xl font-bold leading-tight md:text-2xl">
-													<Link
-														href={`/blog/${post.slug}`}
-														className="transition-colors hover:text-primary"
-													>
-														{post.title}
-													</Link>
-												</h2>
-
-												{/* Excerpt */}
-												<p className="mb-6 line-clamp-3 text-muted leading-relaxed">
-													{post.excerpt}
-												</p>
-
-												{/* Meta */}
-												<div className="mb-6 mt-auto flex items-center gap-5 text-sm text-muted">
-													<div className="flex items-center gap-1.5">
-														<Calendar
-															className="h-4 w-4"
-															aria-hidden="true"
-														/>
-														<time dateTime={post.date}>
-															{formatDate(post.date)}
-														</time>
-													</div>
-													<div className="flex items-center gap-1.5">
-														<Clock
-															className="h-4 w-4"
-															aria-hidden="true"
-														/>
-														<span>{post.readingTime}</span>
-													</div>
-												</div>
-
-												{/* Read more link */}
+											{/* Title */}
+											<h2 className="mb-3 font-heading text-xl font-bold leading-tight md:text-2xl">
 												<Link
 													href={`/blog/${post.slug}`}
-													className="inline-flex items-center gap-2 font-heading font-semibold uppercase tracking-wide text-primary transition-colors hover:text-primary-dark"
+													className="transition-colors hover:text-primary"
 												>
-													Read More
-													<ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+													{post.title}
 												</Link>
+											</h2>
+
+											{/* Excerpt */}
+											<p className="mb-6 line-clamp-3 text-muted leading-relaxed">
+												{post.excerpt}
+											</p>
+
+											{/* Meta */}
+											<div className="mb-6 mt-auto flex items-center gap-5 text-sm text-muted">
+												<div className="flex items-center gap-1.5">
+													<Calendar
+														className="h-4 w-4"
+														aria-hidden="true"
+													/>
+													<time dateTime={post.date}>
+														{formatDate(post.date)}
+													</time>
+												</div>
+												<div className="flex items-center gap-1.5">
+													<Clock
+														className="h-4 w-4"
+														aria-hidden="true"
+													/>
+													<span>{post.readingTime}</span>
+												</div>
 											</div>
-										</article>
-									</StaggerItem>
-								))}
-							</div>
+
+											{/* Read more link */}
+											<Link
+												href={`/blog/${post.slug}`}
+												className="inline-flex items-center gap-2 font-heading font-semibold uppercase tracking-wide text-primary transition-colors hover:text-primary-dark"
+											>
+												Read More
+												<ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+											</Link>
+										</div>
+									</article>
+								</StaggerItem>
+							))}
 						</Stagger>
 					) : (
 						<FadeIn>

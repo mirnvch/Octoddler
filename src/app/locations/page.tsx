@@ -72,66 +72,64 @@ export default function LocationsPage() {
 			{/* Locations Grid */}
 			<section className="pb-20 md:pb-28 lg:pb-36">
 				<Container>
-					<Stagger>
-						<div className="grid md:grid-cols-2 gap-10 lg:gap-12">
-							{LOCATIONS_DETAIL.map((location) => (
-								<StaggerItem key={location.slug}>
-									<div className="hover-lift rounded-sm border-[5px] border-border bg-card p-8 md:p-10 flex flex-col h-full">
-										{/* Location Name */}
-										<h2 className="font-heading text-2xl md:text-3xl font-medium mb-4">
-											{location.name}
-										</h2>
+					<Stagger className="grid gap-10 md:grid-cols-2 lg:gap-12" amount={0.05}>
+						{LOCATIONS_DETAIL.map((location) => (
+							<StaggerItem key={location.slug}>
+								<div className="hover-lift rounded-sm border-[5px] border-border bg-card p-8 md:p-10 flex flex-col h-full">
+									{/* Location Name */}
+									<h2 className="font-heading text-2xl md:text-3xl font-medium mb-4">
+										{location.name}
+									</h2>
 
-										{/* Description */}
-										<p className="text-muted leading-relaxed mb-6">
-											{location.description}
+									{/* Description */}
+									<p className="text-muted leading-relaxed mb-6">
+										{location.description}
+									</p>
+
+									{/* Address & Phone */}
+									<div className="space-y-3 mb-8">
+										<p className="text-foreground/80 flex items-start gap-3">
+											<MapPin className="w-5 h-5 flex-shrink-0 mt-0.5 text-primary" />
+											<span>{location.address}</span>
 										</p>
-
-										{/* Address & Phone */}
-										<div className="space-y-3 mb-8">
-											<p className="text-foreground/80 flex items-start gap-3">
-												<MapPin className="w-5 h-5 flex-shrink-0 mt-0.5 text-primary" />
-												<span>{location.address}</span>
-											</p>
-											<p className="text-foreground/80 flex items-center gap-3">
-												<Phone className="w-5 h-5 flex-shrink-0 text-primary" />
-												<a
-													href={`tel:${location.phone}`}
-													className="link-underline"
-												>
-													{location.phone}
-												</a>
-											</p>
-										</div>
-
-										{/* Programs */}
-										<div className="mb-8">
-											<p className="font-heading text-xs font-semibold uppercase tracking-[0.15em] text-muted mb-3">
-												Programs Offered
-											</p>
-											<div className="flex flex-wrap gap-2">
-												{location.programs.map((program) => (
-													<Badge key={program} variant="primary">
-														{program}
-													</Badge>
-												))}
-											</div>
-										</div>
-
-										{/* CTA Link */}
-										<div className="mt-auto pt-6 border-t border-border">
-											<Link
-												href={`/locations/${location.slug}`}
-												className="link-underline inline-flex items-center gap-2 font-heading text-sm font-bold uppercase tracking-wider text-foreground"
+										<p className="text-foreground/80 flex items-center gap-3">
+											<Phone className="w-5 h-5 flex-shrink-0 text-primary" />
+											<a
+												href={`tel:+1${location.phone.replace(/[^0-9]/g, '')}`}
+												className="link-underline"
 											>
-												View Details
-												<ArrowRight className="w-4 h-4" />
-											</Link>
+												{location.phone}
+											</a>
+										</p>
+									</div>
+
+									{/* Programs */}
+									<div className="mb-8">
+										<p className="font-heading text-xs font-semibold uppercase tracking-[0.15em] text-muted mb-3">
+											Programs Offered
+										</p>
+										<div className="flex flex-wrap gap-2">
+											{location.programs.map((program) => (
+												<Badge key={program} variant="primary">
+													{program}
+												</Badge>
+											))}
 										</div>
 									</div>
-								</StaggerItem>
-							))}
-						</div>
+
+									{/* CTA Link */}
+									<div className="mt-auto pt-6 border-t border-border">
+										<Link
+											href={`/locations/${location.slug}`}
+											className="link-underline inline-flex items-center gap-2 font-heading text-sm font-bold uppercase tracking-wider text-foreground"
+										>
+											View Details
+											<ArrowRight className="w-4 h-4" />
+										</Link>
+									</div>
+								</div>
+							</StaggerItem>
+						))}
 					</Stagger>
 				</Container>
 			</section>

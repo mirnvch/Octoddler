@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight, Clock, Calendar } from 'lucide-react'
 import type { BlogPost } from '@/lib/blog'
 import { formatDate } from '@/lib/blog'
@@ -12,8 +13,19 @@ interface PostCardProps {
 export function PostCard({ post }: PostCardProps) {
 	return (
 		<Card className="group flex h-full flex-col overflow-hidden">
-			{/* Image placeholder */}
-			<div className="aspect-video w-full bg-border -m-8 mb-6" />
+			{post.image ? (
+				<div className="relative -m-8 mb-6 aspect-video w-full overflow-hidden">
+					<Image
+						src={post.image}
+						alt={post.title}
+						fill
+						className="object-cover"
+						sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+					/>
+				</div>
+			) : (
+				<div className="aspect-video w-full bg-border -m-8 mb-6" />
+			)}
 
 			{/* Category badge */}
 			<Badge variant="primary" className="mb-3 w-fit">

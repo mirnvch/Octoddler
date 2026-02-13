@@ -188,13 +188,18 @@ export default async function LocationPage({ params }: LocationPageProps) {
 
 						{/* Right Column - Map & Features */}
 						<div className="space-y-8">
-							{/* Map Placeholder */}
-							<div className="aspect-video bg-border rounded-sm overflow-hidden">
-								<div className="w-full h-full flex flex-col items-center justify-center text-muted p-8 text-center">
-									<MapPin className="w-12 h-12 mb-3" />
-									<p className="text-sm">Interactive Map Placeholder</p>
-									<p className="text-xs mt-2">{location.address}</p>
-								</div>
+							{/* Map */}
+							<div className="aspect-video rounded-sm overflow-hidden border-[5px] border-border">
+								<iframe
+									title={`Map of ${location.name}`}
+									src={`https://www.google.com/maps?q=${encodeURIComponent(location.address)}&output=embed`}
+									width="100%"
+									height="100%"
+									style={{ border: 0 }}
+									allowFullScreen
+									loading="lazy"
+									referrerPolicy="no-referrer-when-downgrade"
+								/>
 							</div>
 
 							{/* Features */}

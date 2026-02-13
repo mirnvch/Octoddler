@@ -207,36 +207,34 @@ export default function AboutPage() {
 						</div>
 					</FadeIn>
 
-					<Stagger>
-						<div className="grid gap-8 md:grid-cols-3">
-							{VALUES.map((value) => {
-								const Icon = value.icon
-								return (
-									<StaggerItem key={value.title}>
-										<div className="hover-lift border-[5px] border-border bg-background p-8 text-center">
-											<span className="font-abril text-5xl text-primary/30">
-												{value.number}
-											</span>
-											<div className="mt-4 flex justify-center">
-												<div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
-													<Icon
-														className="h-8 w-8 text-primary"
-														strokeWidth={1.5}
-													/>
-												</div>
+					<Stagger className="grid gap-8 md:grid-cols-3" amount={0.05}>
+						{VALUES.map((value) => {
+							const Icon = value.icon
+							return (
+								<StaggerItem key={value.title}>
+									<div className="hover-lift border-[5px] border-border bg-background p-8 text-center">
+										<span className="font-abril text-5xl text-primary/30">
+											{value.number}
+										</span>
+										<div className="mt-4 flex justify-center">
+											<div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
+												<Icon
+													className="h-8 w-8 text-primary"
+													strokeWidth={1.5}
+												/>
 											</div>
-											<h3 className="mt-6 font-heading text-xl font-bold uppercase tracking-wide md:text-2xl">
-												{value.title}
-											</h3>
-											<hr className="mx-auto my-4 w-12 border-border" />
-											<p className="text-muted leading-relaxed">
-												{value.description}
-											</p>
 										</div>
-									</StaggerItem>
-								)
-							})}
-						</div>
+										<h3 className="mt-6 font-heading text-xl font-bold uppercase tracking-wide md:text-2xl">
+											{value.title}
+										</h3>
+										<hr className="mx-auto my-4 w-12 border-border" />
+										<p className="text-muted leading-relaxed">
+											{value.description}
+										</p>
+									</div>
+								</StaggerItem>
+							)
+						})}
 					</Stagger>
 				</Container>
 			</section>

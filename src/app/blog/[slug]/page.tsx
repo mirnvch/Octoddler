@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation'
+import Image from 'next/image'
 import { Clock, Calendar } from 'lucide-react'
 import {
 	getAllSlugs,
@@ -116,13 +117,20 @@ export default async function BlogPostPage({ params }: PageProps) {
 					</FadeIn>
 
 					{/* Featured image */}
-					<FadeIn delay={0.1}>
-						{post.image ? (
-							<div className="mb-12 aspect-video w-full overflow-hidden rounded-sm border-[5px] border-border bg-border" />
-						) : (
-							<div className="mb-12 aspect-video w-full bg-border" />
-						)}
-					</FadeIn>
+					{post.image && (
+						<FadeIn delay={0.1}>
+							<div className="relative mb-12 aspect-video w-full overflow-hidden rounded-sm border-[5px] border-border">
+								<Image
+									src={post.image}
+									alt={post.title}
+									fill
+									className="object-cover"
+									sizes="(max-width: 768px) 100vw, 1160px"
+									priority
+								/>
+							</div>
+						</FadeIn>
+					)}
 
 					{/* Article content */}
 					<FadeIn delay={0.15}>
@@ -153,14 +161,12 @@ export default async function BlogPostPage({ params }: PageProps) {
 									Related Articles
 								</h2>
 							</FadeIn>
-							<Stagger>
-								<div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-									{relatedPosts.map((relatedPost) => (
-										<StaggerItem key={relatedPost.slug}>
-											<PostCard post={relatedPost} />
-										</StaggerItem>
-									))}
-								</div>
+							<Stagger className="grid gap-8 md:grid-cols-2 lg:grid-cols-3" amount={0.05}>
+								{relatedPosts.map((relatedPost) => (
+									<StaggerItem key={relatedPost.slug}>
+										<PostCard post={relatedPost} />
+									</StaggerItem>
+								))}
 							</Stagger>
 						</div>
 					)}

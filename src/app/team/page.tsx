@@ -55,7 +55,7 @@ export default function TeamPage() {
 					</FadeIn>
 
 					{/* Team grid */}
-					<Stagger className="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+					<Stagger className="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-3" amount={0.05}>
 						{TEAM_MEMBERS.map((member, index) => (
 							<StaggerItem key={member.slug}>
 								<div className="hover-lift border-[5px] border-border bg-background">

@@ -5,6 +5,7 @@ export const SITE = {
 	url: 'https://www.octoddlerschool.com',
 	email: 'info@octoddlerschool.com',
 	phone: '(949) 484-9990',
+	phoneHref: 'tel:+19494849990',
 	socials: {
 		facebook: 'https://www.facebook.com/octoddlerschool',
 		instagram: 'https://www.instagram.com/octoddlerschool',
