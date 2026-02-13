@@ -61,7 +61,7 @@ export function Welcome() {
 
 							{/* Attribution */}
 							<footer className="mt-6 font-heading text-sm uppercase tracking-wider text-foreground/60">
-								— Alla Akselrod, Founder
+								— Ms. Alla, Program Director
 							</footer>
 
 							{/* Closing quote mark */}

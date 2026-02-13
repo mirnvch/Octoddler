@@ -22,7 +22,7 @@ export function AboutPreview() {
 
 							<div className="space-y-5 text-foreground/80">
 								<p>
-									Founded in 2013 by Alla Akselrod, Octoddler School began with a
+									Founded in 2013, Octoddler School began with a
 									simple but powerful vision: to create a place where young children
 									could learn at their own pace in a nurturing, Montessori-inspired
 									environment. What started as a small classroom has grown into a
