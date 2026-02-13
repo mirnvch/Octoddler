@@ -95,6 +95,7 @@ p {
 .link-underline {
 	position: relative;
 	text-decoration: none;
+	width: fit-content;
 }
 
 .link-underline::after {

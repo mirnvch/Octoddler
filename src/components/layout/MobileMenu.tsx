@@ -107,7 +107,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
 										<Link
 											href={item.href}
 											onClick={onClose}
-											className="link-underline block py-3 font-heading text-2xl font-bold uppercase tracking-wider text-foreground"
+											className="link-underline inline-block py-3 font-heading text-2xl font-bold uppercase tracking-wider text-foreground"
 										>
 											{item.label}
 										</Link>
@@ -121,7 +121,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
 									<Link
 										href="/locations"
 										onClick={onClose}
-										className="link-underline block py-3 font-heading text-2xl font-bold uppercase tracking-wider text-foreground"
+										className="link-underline inline-block py-3 font-heading text-2xl font-bold uppercase tracking-wider text-foreground"
 									>
 										Locations
 									</Link>

@@ -11,9 +11,11 @@
     "format": "biome format --write ."
   },
   "dependencies": {
+    "@gsap/react": "^2.1.2",
     "clsx": "^2.1.1",
     "framer-motion": "^12.34.0",
     "gray-matter": "^4.0.3",
+    "gsap": "^3.14.2",
     "lottie-react": "^2.4.1",
     "lucide-react": "^0.563.0",
     "next": "16.1.6",
