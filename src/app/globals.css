@@ -1,26 +1,123 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ============================================
+   Dark Mode Custom Variant
+   ============================================ */
+@custom-variant dark (&:where(.dark, .dark *));
 
+/* ============================================
+   Design System Theme
+   ============================================ */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+	/* Colors */
+	--color-primary: #9fc7aa;
+	--color-primary-dark: #7fb48d;
+	--color-secondary: #efa487;
+	--color-secondary-dark: #e88a65;
+	--color-accent: #ce8657;
+	--color-background: #fcf8f0;
+	--color-foreground: #151515;
+	--color-border: #f3ead9;
+	--color-card: #ffffff;
+	--color-muted: #666666;
+	--color-muted-light: #999999;
+
+	/* Fonts */
+	--font-heading: var(--font-josefin-sans);
+	--font-body: var(--font-dm-sans);
+	--font-display: var(--font-playfair-display);
+
+	/* Container */
+	--container-sm: 568px;
+	--container-md: 768px;
+	--container-lg: 992px;
+	--container-xl: 1240px;
+
+	/* Section Spacing */
+	--spacing-section: 6rem;
+	--spacing-section-sm: 4rem;
+	--spacing-section-xs: 3rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ============================================
+   Base Styles
+   ============================================ */
+html {
+	scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+	font-family: var(--font-body), system-ui, sans-serif;
+	background-color: var(--color-background);
+	color: var(--color-foreground);
+	line-height: 1.6;
+	font-size: 1.125rem;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+	background-color: var(--color-primary);
+	color: var(--color-foreground);
+}
+
+/* ============================================
+   Typography
+   ============================================ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--font-heading), sans-serif;
+	font-weight: 500;
+	line-height: 1.1;
+	letter-spacing: -0.02em;
+}
+
+/* ============================================
+   Focus Styles (WCAG 2.2)
+   ============================================ */
+:focus-visible {
+	outline: 3px solid var(--color-primary);
+	outline-offset: 2px;
+	border-radius: 2px;
+}
+
+/* ============================================
+   Skip Navigation (Accessibility)
+   ============================================ */
+.skip-nav {
+	position: absolute;
+	top: -100%;
+	left: 0;
+	z-index: 100;
+	padding: 0.5rem 1rem;
+	background-color: var(--color-primary);
+	color: var(--color-foreground);
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.skip-nav:focus {
+	top: 0;
+}
+
+/* ============================================
+   Reduced Motion
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
 }
