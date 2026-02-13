@@ -1,29 +1,32 @@
 import { Container } from '@/components/ui/Container'
-import { SectionHeading } from '@/components/ui/SectionHeading'
-import { Button } from '@/components/ui/Button'
+import { FadeIn } from '@/components/ui/FadeIn'
 
 export function Newsletter() {
 	return (
 		<section className="py-section-sm">
 			<Container>
-				<SectionHeading
-					title="Stay Connected"
-					subtitle="Sign up for parenting tips, Montessori activities, and school updates."
-				/>
-				<div className="mx-auto max-w-md">
-					<form className="flex gap-2">
+				<FadeIn>
+					<h2 className="text-center font-heading text-2xl font-bold uppercase tracking-wide md:text-3xl">
+						Sign Up for School Updates
+					</h2>
+
+					<form className="mx-auto mt-8 max-w-[600px]">
 						<input
 							type="email"
 							name="email"
 							placeholder="Enter your email"
 							required
-							className="flex-1 rounded-sm border border-border bg-card px-4 py-3 text-foreground placeholder:text-muted-light focus:border-primary focus:outline-none"
+							aria-label="Email address"
+							className="w-full rounded-sm border border-border bg-card px-5 py-4 text-foreground placeholder:text-muted-light focus:border-primary focus:outline-none"
 						/>
-						<Button type="submit" variant="primary">
+						<button
+							type="submit"
+							className="mt-4 w-full rounded-sm bg-primary py-4 font-heading font-bold uppercase tracking-wide text-foreground transition-colors duration-200 hover:bg-primary-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+						>
 							Subscribe
-						</Button>
+						</button>
 					</form>
-				</div>
+				</FadeIn>
 			</Container>
 		</section>
 	)

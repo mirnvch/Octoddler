@@ -2,75 +2,97 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { Menu } from 'lucide-react'
-import { cn } from '@/lib/utils'
-import { NAV_ITEMS, SITE } from '@/lib/constants'
-import { Button } from '@/components/ui/Button'
-import { MobileMenu } from './MobileMenu'
+import Image from 'next/image'
+import dynamic from 'next/dynamic'
+import { SITE } from '@/lib/constants'
+
+const MobileMenu = dynamic(
+	() => import('./MobileMenu').then((mod) => ({ default: mod.MobileMenu })),
+	{ ssr: false },
+)
 
 export function Header() {
-	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+	const [isMenuOpen, setIsMenuOpen] = useState(false)
 
 	return (
 		<>
-			<header className="sticky top-0 z-50 bg-background border-b border-foreground/10">
-				<div className="container mx-auto px-4 sm:px-6 lg:px-8">
-					<div className="flex items-center justify-between h-20">
+			<header className="sticky top-0 z-50 bg-background">
+				<div className="mx-auto max-w-[1240px] px-4 sm:px-6 lg:px-8">
+					<div className="flex h-20 items-center justify-between md:h-24">
 						{/* Logo */}
 						<Link
 							href="/"
-							className="font-heading text-xl sm:text-2xl font-bold text-foreground hover:text-primary transition-colors duration-200"
+							className="relative flex items-center transition-opacity duration-200 hover:opacity-80"
+							aria-label={`${SITE.name} — Home`}
 						>
-							{SITE.name}
+							<Image
+								src="/images/logos/oc-logo.png"
+								alt={SITE.name}
+								width={180}
+								height={48}
+								className="h-10 w-auto md:h-12"
+								priority
+							/>
 						</Link>
 
-						{/* Desktop Navigation */}
-						<nav
-							className="hidden lg:flex items-center gap-8"
-							aria-label="Main navigation"
-						>
-							{NAV_ITEMS.map((item) => (
-								<Link
-									key={item.href}
-									href={item.href}
-									className={cn(
-										'relative font-heading text-sm font-medium uppercase tracking-wide text-foreground',
-										'transition-colors duration-200 hover:text-primary',
-										'after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-200',
-										'hover:after:w-full',
-									)}
+						{/* Right Side: Phone + Menu */}
+						<div className="flex items-center gap-6 md:gap-8">
+							{/* Phone Link (desktop only) */}
+							<a
+								href={`tel:${SITE.phone}`}
+								className="link-underline hidden font-heading text-sm font-medium uppercase tracking-wide text-foreground sm:inline-block"
+							>
+								{SITE.phone}
+							</a>
+
+							{/* Menu Button (always visible) */}
+							<button
+								type="button"
+								onClick={() => setIsMenuOpen(true)}
+								className="flex items-center gap-2 font-heading text-sm font-medium uppercase tracking-wider text-foreground transition-colors duration-200 hover:text-primary"
+								aria-label="Open navigation menu"
+								aria-expanded={isMenuOpen}
+							>
+								<span className="hidden sm:inline">Menu</span>
+								<svg
+									width="24"
+									height="18"
+									viewBox="0 0 24 18"
+									fill="none"
+									aria-hidden="true"
 								>
-									{item.label}
-								</Link>
-							))}
-						</nav>
-
-						{/* Desktop CTA */}
-						<div className="hidden lg:block">
-							<Button href="/contact" size="sm">
-								Schedule a Tour
-							</Button>
+									<line
+										x1="0"
+										y1="1"
+										x2="24"
+										y2="1"
+										stroke="currentColor"
+										strokeWidth="2"
+									/>
+									<line
+										x1="0"
+										y1="9"
+										x2="24"
+										y2="9"
+										stroke="currentColor"
+										strokeWidth="2"
+									/>
+									<line
+										x1="0"
+										y1="17"
+										x2="24"
+										y2="17"
+										stroke="currentColor"
+										strokeWidth="2"
+									/>
+								</svg>
+							</button>
 						</div>
-
-						{/* Mobile Menu Button */}
-						<button
-							type="button"
-							className="lg:hidden p-2 text-foreground hover:text-primary transition-colors duration-200"
-							onClick={() => setIsMobileMenuOpen(true)}
-							aria-label="Open mobile menu"
-							aria-expanded={isMobileMenuOpen}
-						>
-							<Menu className="w-6 h-6" />
-						</button>
 					</div>
 				</div>
 			</header>
 
-			{/* Mobile Menu */}
-			<MobileMenu
-				isOpen={isMobileMenuOpen}
-				onClose={() => setIsMobileMenuOpen(false)}
-			/>
+			<MobileMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
 		</>
 	)
 }

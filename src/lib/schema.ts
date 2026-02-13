@@ -54,6 +54,35 @@ export function generateBreadcrumbSchema(
 	}
 }
 
+export function generateArticleSchema(post: {
+	title: string
+	excerpt: string
+	slug: string
+	date: string
+	author: string
+	image?: string
+}) {
+	return {
+		'@context': 'https://schema.org',
+		'@type': 'Article',
+		headline: post.title,
+		description: post.excerpt,
+		url: `${SITE.url}/blog/${post.slug}`,
+		datePublished: post.date,
+		dateModified: post.date,
+		author: {
+			'@type': 'Person',
+			name: post.author,
+		},
+		publisher: {
+			'@type': 'Organization',
+			name: SITE.name,
+			url: SITE.url,
+		},
+		image: post.image ? `${SITE.url}${post.image}` : undefined,
+	}
+}
+
 export function generateFAQSchema(
 	questions: { question: string; answer: string }[],
 ) {

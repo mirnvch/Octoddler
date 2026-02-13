@@ -9,6 +9,6 @@ export const FOOTER_LINKS = {
 		{ label: 'Blog', href: '/blog' },
 		{ label: 'Contact', href: '/contact' },
 		{ label: 'FAQ', href: '/faq' },
-		{ label: 'Resources', href: '/resources' },
+		{ label: 'Locations', href: '/locations' },
 	],
 } as const

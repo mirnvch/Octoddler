@@ -5,82 +5,120 @@ import { SITE } from '@/lib/constants'
 
 export function Footer() {
 	return (
-		<footer role="contentinfo" className="bg-primary py-16 text-foreground">
+		<footer role="contentinfo" className="bg-primary py-16 md:py-20">
 			<Container>
 				{/* Social Icons Row */}
-				<div className="mb-12 flex items-center justify-center gap-4">
+				<div className="mb-14 flex items-center justify-center gap-5">
 					<a
 						href={SITE.socials.facebook}
 						target="_blank"
 						rel="noopener noreferrer"
-						className="flex h-14 w-14 items-center justify-center rounded-full bg-foreground text-background transition-transform hover:-translate-y-1.5"
+						className="hover-lift flex h-[72px] w-[72px] items-center justify-center rounded-full bg-foreground text-background md:h-20 md:w-20"
 						aria-label="Follow us on Facebook"
 					>
-						<Facebook className="h-6 w-6" />
+						<Facebook className="h-7 w-7 md:h-8 md:w-8" aria-hidden="true" />
 					</a>
 					<a
 						href={SITE.socials.instagram}
 						target="_blank"
 						rel="noopener noreferrer"
-						className="flex h-14 w-14 items-center justify-center rounded-full bg-foreground text-background transition-transform hover:-translate-y-1.5"
+						className="hover-lift flex h-[72px] w-[72px] items-center justify-center rounded-full bg-foreground text-background md:h-20 md:w-20"
 						aria-label="Follow us on Instagram"
 					>
-						<Instagram className="h-6 w-6" />
+						<Instagram className="h-7 w-7 md:h-8 md:w-8" aria-hidden="true" />
 					</a>
 				</div>
 
-				{/* Three-Column Links Section */}
-				<div className="mb-12 grid grid-cols-1 gap-8 md:grid-cols-3">
-					{/* Column 1 */}
+				{/* Three-Column Links */}
+				<div className="mb-14 grid grid-cols-1 gap-10 text-center md:grid-cols-3 md:text-left">
+					{/* Column 1 — Programs */}
 					<div className="flex flex-col gap-3">
-						<Link href="/about" className="hover:underline">
+						<h3 className="mb-1 font-heading text-xs font-bold uppercase tracking-[0.166em] text-foreground/60">
+							Programs
+						</h3>
+						<Link
+							href="/programs/toddler"
+							className="link-underline inline-block text-foreground"
+						>
+							Toddler Program
+						</Link>
+						<Link
+							href="/programs/preschool"
+							className="link-underline inline-block text-foreground"
+						>
+							Preschool Program
+						</Link>
+						<Link
+							href="/programs/pre-k"
+							className="link-underline inline-block text-foreground"
+						>
+							Pre-K Program
+						</Link>
+					</div>
+
+					{/* Column 2 — School */}
+					<div className="flex flex-col gap-3">
+						<h3 className="mb-1 font-heading text-xs font-bold uppercase tracking-[0.166em] text-foreground/60">
+							School
+						</h3>
+						<Link href="/about" className="link-underline inline-block text-foreground">
 							About
 						</Link>
-						<Link href="/programs" className="hover:underline">
-							Programs
-						</Link>
-						<Link href="/team" className="hover:underline">
+						<Link href="/team" className="link-underline inline-block text-foreground">
 							Team
 						</Link>
-						<Link href="/admissions" className="hover:underline">
+						<Link
+							href="/admissions"
+							className="link-underline inline-block text-foreground"
+						>
 							Admissions
 						</Link>
-					</div>
-
-					{/* Column 2 */}
-					<div className="flex flex-col gap-3">
-						<Link href="/blog" className="hover:underline">
+						<Link href="/blog" className="link-underline inline-block text-foreground">
 							Blog
 						</Link>
-						<Link href="/contact" className="hover:underline">
-							Contact
-						</Link>
-						<Link href="/faq" className="hover:underline">
+						<Link href="/faq" className="link-underline inline-block text-foreground">
 							FAQ
-						</Link>
-						<Link href="/resources" className="hover:underline">
-							Resources
 						</Link>
 					</div>
 
-					{/* Column 3 */}
+					{/* Column 3 — Contact */}
 					<div className="flex flex-col gap-3">
-						<p className="font-medium">{SITE.name}</p>
-						<a href={`tel:${SITE.phone}`} className="hover:underline">
+						<h3 className="mb-1 font-heading text-xs font-bold uppercase tracking-[0.166em] text-foreground/60">
+							Contact
+						</h3>
+						<a href={`tel:${SITE.phone}`} className="link-underline inline-block text-foreground">
 							{SITE.phone}
 						</a>
-						<a href={`mailto:${SITE.email}`} className="hover:underline">
+						<a
+							href={`mailto:${SITE.email}`}
+							className="link-underline inline-block text-foreground"
+						>
 							{SITE.email}
 						</a>
+						<Link
+							href="/locations"
+							className="link-underline inline-block text-foreground"
+						>
+							Our Locations
+						</Link>
+						<Link
+							href="/contact"
+							className="link-underline inline-block text-foreground"
+						>
+							Schedule a Tour
+						</Link>
 					</div>
 				</div>
 
 				{/* Bottom Bar */}
 				<div className="flex flex-col items-center justify-between gap-4 border-t border-foreground/20 pt-8 md:flex-row">
-					<p className="text-sm">
-						© 2026 Octoddler School. All rights reserved.
+					<p className="text-sm text-foreground/70">
+						&copy; {new Date().getFullYear()} {SITE.name}. All rights reserved.
 					</p>
-					<Link href="/privacy" className="text-sm hover:underline">
+					<Link
+						href="/privacy"
+						className="link-underline text-sm text-foreground/70"
+					>
 						Privacy Policy
 					</Link>
 				</div>

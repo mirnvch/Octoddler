@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next'
-import { DM_Sans, Josefin_Sans, Playfair_Display } from 'next/font/google'
+import { Abril_Fatface, DM_Sans, Josefin_Sans, Playfair_Display } from 'next/font/google'
 import { SITE } from '@/lib/constants'
 import { generateOrganizationSchema } from '@/lib/schema'
 import { Header } from '@/components/layout/Header'
@@ -26,6 +26,13 @@ const playfairDisplay = Playfair_Display({
 	variable: '--font-playfair-display',
 	display: 'swap',
 	style: ['normal', 'italic'],
+})
+
+const abrilFatface = Abril_Fatface({
+	subsets: ['latin'],
+	weight: '400',
+	variable: '--font-abril-fatface',
+	display: 'swap',
 })
 
 export const metadata: Metadata = {
@@ -77,7 +84,7 @@ export default function RootLayout({
 	return (
 		<html
 			lang="en"
-			className={`${josefinSans.variable} ${dmSans.variable} ${playfairDisplay.variable}`}
+			className={`${josefinSans.variable} ${dmSans.variable} ${playfairDisplay.variable} ${abrilFatface.variable}`}
 		>
 			<head>
 				<script

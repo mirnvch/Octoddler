@@ -1,10 +1,6 @@
-'use client'
-
-import { useState } from 'react'
-import { ChevronDown } from 'lucide-react'
 import { Container } from '@/components/ui/Container'
 import { SectionHeading } from '@/components/ui/SectionHeading'
-import { cn } from '@/lib/utils'
+import { Accordion } from '@/components/ui/Accordion'
 
 interface FAQItem {
 	question: string
@@ -44,48 +40,11 @@ const defaultQuestions: FAQItem[] = [
 ]
 
 export function FAQ({ questions = defaultQuestions }: FAQProps) {
-	const [openIndex, setOpenIndex] = useState<number | null>(null)
-
-	const toggleQuestion = (index: number) => {
-		setOpenIndex(openIndex === index ? null : index)
-	}
-
 	return (
 		<section className="py-section">
 			<Container>
 				<SectionHeading title="Frequently Asked Questions" />
-				<div className="mx-auto max-w-3xl">
-					{questions.map((item, index) => (
-						<div key={index} className="border-b border-border py-4">
-							<button
-								onClick={() => toggleQuestion(index)}
-								className="flex w-full items-center justify-between gap-4 text-left"
-							>
-								<h3 className="font-heading text-lg font-medium">
-									{item.question}
-								</h3>
-								<ChevronDown
-									className={cn(
-										'h-5 w-5 flex-shrink-0 text-muted transition-transform duration-200',
-										openIndex === index && 'rotate-180',
-									)}
-								/>
-							</button>
-							<div
-								className={cn(
-									'grid transition-all duration-200 ease-in-out',
-									openIndex === index
-										? 'grid-rows-[1fr] opacity-100'
-										: 'grid-rows-[0fr] opacity-0',
-								)}
-							>
-								<div className="overflow-hidden">
-									<p className="pb-2 pt-3 text-muted">{item.answer}</p>
-								</div>
-							</div>
-						</div>
-					))}
-				</div>
+				<Accordion items={questions} idPrefix="faq" />
 			</Container>
 		</section>
 	)

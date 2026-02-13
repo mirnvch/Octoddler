@@ -12,6 +12,7 @@
 	/* Colors */
 	--color-primary: #9fc7aa;
 	--color-primary-dark: #7fb48d;
+	--color-primary-light: #adcfb7;
 	--color-secondary: #efa487;
 	--color-secondary-dark: #e88a65;
 	--color-accent: #ce8657;
@@ -26,6 +27,7 @@
 	--font-heading: var(--font-josefin-sans);
 	--font-body: var(--font-dm-sans);
 	--font-display: var(--font-playfair-display);
+	--font-abril: var(--font-abril-fatface);
 
 	/* Container */
 	--container-sm: 568px;
@@ -50,8 +52,8 @@ body {
 	font-family: var(--font-body), system-ui, sans-serif;
 	background-color: var(--color-background);
 	color: var(--color-foreground);
-	line-height: 1.6;
-	font-size: 1.125rem;
+	line-height: 1.7;
+	font-size: 1.0625rem;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
@@ -72,8 +74,54 @@ h5,
 h6 {
 	font-family: var(--font-heading), sans-serif;
 	font-weight: 500;
-	line-height: 1.1;
-	letter-spacing: -0.02em;
+	line-height: 1.15;
+	letter-spacing: -0.01em;
+}
+
+p {
+	line-height: 1.75;
+}
+
+/* ============================================
+   Abril Fatface Utility
+   ============================================ */
+.font-abril {
+	font-family: var(--font-abril), serif;
+}
+
+/* ============================================
+   Editorial Link Underline
+   ============================================ */
+.link-underline {
+	position: relative;
+	text-decoration: none;
+}
+
+.link-underline::after {
+	content: '';
+	position: absolute;
+	bottom: -2px;
+	left: 0;
+	width: 0;
+	height: 2px;
+	background-color: currentColor;
+	transition: width 0.3s ease;
+}
+
+.link-underline:hover::after {
+	width: 100%;
+}
+
+/* ============================================
+   Hover Lift Effect
+   ============================================ */
+.hover-lift {
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+	transform: translateY(-6px);
+	box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
 }
 
 /* ============================================

@@ -12,7 +12,8 @@ export function createMetadata({
 	path?: string
 	image?: string
 }): Metadata {
-	const pageTitle = title ? `${title} | ${SITE.name}` : SITE.name
+	const pageTitle = title ?? SITE.name
+	const ogTitle = title ? `${title} | ${SITE.name}` : SITE.name
 	const pageDescription = description ?? SITE.description
 	const url = `${SITE.url}${path}`
 
@@ -24,17 +25,17 @@ export function createMetadata({
 			canonical: url,
 		},
 		openGraph: {
-			title: pageTitle,
+			title: ogTitle,
 			description: pageDescription,
 			url,
 			siteName: SITE.name,
-			images: [{ url: image, width: 1200, height: 630, alt: pageTitle }],
+			images: [{ url: image, width: 1200, height: 630, alt: ogTitle }],
 			type: 'website',
 			locale: 'en_US',
 		},
 		twitter: {
 			card: 'summary_large_image',
-			title: pageTitle,
+			title: ogTitle,
 			description: pageDescription,
 			images: [image],
 		},
