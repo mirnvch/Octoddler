@@ -10,13 +10,13 @@ export function Hero() {
 					{/* Text */}
 					<FadeIn direction="left">
 						<h1 className="text-4xl leading-[1.1] md:text-5xl lg:text-6xl">
-							<span className="font-display italic">Where Children</span>
+							<span className="font-display italic">Where Little Minds</span>
 							<br />
 							<span className="font-heading text-5xl font-bold uppercase tracking-wide md:text-6xl lg:text-7xl">
-								Discover
+								Explore
 							</span>
 							<br />
-							<span className="font-display italic">the Joy of Learning</span>
+							<span className="font-display italic">a World of Wonder</span>
 						</h1>
 					</FadeIn>
 
